@@ -1,0 +1,47 @@
+!InputData
+
+# Required fields
+year: 2019
+fed_allowances: 2
+ca_allowances: 2
+
+# Taxed at the regular rate, e.g. salary
+regular_wages: 125000
+# Taxed at the flat supplemental rate, e.g. bonus
+supplemental_wages:
+  bonus: 12500
+  rsu: 50000
+# Not taxed, e.g. ESPP and ISO bargain elements
+untaxed_wages:
+  espp: 0
+  iso: 0
+
+# Traditional 401(k) (as a positive value) and any other adjustments (negative means deduct)
+k401: 19000
+other_adjustments: 0
+
+interest: 0
+# `dividends` is the total, i.e. includes both `qualified_dividends` and `dividends_foreign_tax`
+dividends: 0
+qualified_dividends: 0
+dividends_foreign_tax: 0
+
+long_term_capital_gains: 0
+short_term_capital_gains: 0
+
+state_tax_refund: 0
+other_income: 0
+
+fed_estimated_tax:
+  q1: 0
+  q2: 0
+  q3: 0
+  q4: 0
+ca_estimated_tax:
+  q1: 0
+  q2: 0
+  q3: 0
+  q4: 0
+
+# For itemized deductions, other state taxes paid, e.g. amount due for previous year
+ca_other_payments: 0

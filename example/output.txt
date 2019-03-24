@@ -1,0 +1,26 @@
+# General
+
+year: 2019
+
+W-2 wages: 168500.00
+AGI: 168500.00
+
+# Federal
+
+taxable wages: 160100.00
+estimated withholding: 30436.50 (19.01%)
+
+taxable income: 156300.00
+theoretical tax: 31686.50 (20.27%)
+paid tax: 30436.50 (19.47%)
+error: -1250.00
+
+# CA
+
+taxable wages: 164099.00
+estimated withholding: 13506.50 (8.23%)
+
+taxable income: 164099.00
+theoretical tax: 12514.64 (7.63%)
+paid tax: 13506.50 (8.23%)
+error: 991.86
