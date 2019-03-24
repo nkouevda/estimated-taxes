@@ -4,13 +4,13 @@ from typing import List
 
 @dataclass(frozen=True)
 class Bracket(object):
-  min: float
-  max: float
+  lower_bound: float
+  upper_bound: float
   rate: float
   constant: float
 
   def get_tax(self, taxable_amount):
-    return (taxable_amount - self.min) * self.rate + self.constant
+    return (taxable_amount - self.lower_bound) * self.rate + self.constant
 
 
 @dataclass(frozen=True)
@@ -19,22 +19,36 @@ class BracketGroup(object):
 
   def get_tax(self, taxable_amount):
     for bracket in self.brackets:
-      if bracket.min <= taxable_amount <= bracket.max:
+      if bracket.lower_bound <= taxable_amount <= bracket.upper_bound:
         return bracket.get_tax(taxable_amount)
 
     raise ValueError(f'Amount out of range: {taxable_amount}')
 
+  @staticmethod
+  def from_dict(threshold_to_rate):
+    lower_values = sorted(threshold_to_rate.items())
+    # Shifted by 1, with infinite upper bound for last bracket
+    upper_values = lower_values[1:] + [(float('inf'), None)]
+
+    brackets = []
+
+    for (lower_bound, rate), (upper_bound, _) in zip(lower_values, upper_values):
+      constant = brackets[-1].get_tax(lower_bound) if brackets else 0
+      brackets.append(Bracket(lower_bound, upper_bound, rate, constant))
+
+    return BracketGroup(brackets)
+
 
 @dataclass(frozen=True)
 class AdditionalTax(object):
-  threshold: float
+  lower_bound: float
   rate: float
 
-  def get_tax(self, taxable_amount, at_most=None):
-    base = max(taxable_amount - self.threshold, 0)
+  def get_tax(self, taxable_amount, limit=None):
+    base = max(taxable_amount - self.lower_bound, 0)
 
-    if at_most is not None and base > at_most:
-      base = at_most
+    if limit is not None and base > limit:
+      base = limit
 
     return base * self.rate
 
@@ -103,12 +117,12 @@ class WithholdingSummary(object):
 @dataclass(frozen=True)
 class TaxSummary(object):
   taxable_income: float
-  theoretical_tax: float
+  total_tax: float
   paid_tax: float
 
   @property
-  def theoretical_tax_rate(self):
-    return self.theoretical_tax / self.taxable_income
+  def total_tax_rate(self):
+    return self.total_tax / self.taxable_income
 
   @property
   def paid_tax_rate(self):
@@ -116,4 +130,4 @@ class TaxSummary(object):
 
   @property
   def tax_error(self):
-    return self.paid_tax - self.theoretical_tax
+    return self.paid_tax - self.total_tax

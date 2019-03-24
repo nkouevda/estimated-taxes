@@ -42,9 +42,9 @@ def get_fed_tax(data, fed_withheld_tax, ca_withheld_tax):
   additional_medicare_tax = (
       fed_constants.ADDITIONAL_MEDICARE_TAX[data.year].get_tax(data.medicare_wages))
   net_investment_income_tax = fed_constants.NET_INVESTMENT_INCOME_TAX[data.year].get_tax(
-      data.agi, at_most=max(data.investment_income, 0))
+      data.agi, limit=max(data.investment_income, 0))
   credits = data.dividends_foreign_tax
-  theoretical_tax = (
+  total_tax = (
       fed_constants.BRACKETS[data.year].get_tax(taxable_income - data.qualified_dividends)
       + data.qualified_dividends * fed_constants.QUALIFIED_DIVIDENDS_RATE
       + additional_medicare_tax
@@ -53,7 +53,7 @@ def get_fed_tax(data, fed_withheld_tax, ca_withheld_tax):
 
   paid_tax = fed_withheld_tax + data.fed_estimated_tax + additional_medicare_tax
 
-  return model.TaxSummary(taxable_income, theoretical_tax, paid_tax)
+  return model.TaxSummary(taxable_income, total_tax, paid_tax)
 
 
 # See https://www.ftb.ca.gov/forms/2018/18_540bk.pdf
@@ -62,8 +62,8 @@ def get_ca_tax(data, ca_withheld_tax):
   adjustments = -data.state_tax_refund
   taxable_income = data.agi + adjustments - deduction
 
-  theoretical_tax = ca_constants.BRACKETS[data.year].get_tax(taxable_income)
+  total_tax = ca_constants.BRACKETS[data.year].get_tax(taxable_income)
 
   paid_tax = ca_withheld_tax + data.ca_estimated_tax
 
-  return model.TaxSummary(taxable_income, theoretical_tax, paid_tax)
+  return model.TaxSummary(taxable_income, total_tax, paid_tax)
