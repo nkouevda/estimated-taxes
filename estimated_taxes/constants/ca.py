@@ -1,4 +1,4 @@
-from . import model
+from .. import model
 
 WITHHOLDING_ALLOWANCE = {
     2016: 119.90,
