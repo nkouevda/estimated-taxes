@@ -3,6 +3,7 @@ def format(data, fed_withholding, ca_withholding, fed_tax, ca_tax):
 # General
 
 year: {data.year}
+filing status: {data.filing_status.name.lower()}
 
 W-2 wages: {data.w2_wages:.2f}
 AGI: {data.agi:.2f}

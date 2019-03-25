@@ -1,5 +1,11 @@
 from dataclasses import dataclass
+from enum import Enum
 from typing import List
+
+
+class FilingStatus(Enum):
+  SINGLE = 1
+  MARRIED = 2
 
 
 @dataclass(frozen=True)
@@ -56,6 +62,7 @@ class AdditionalTax(object):
 @dataclass(frozen=True)
 class InputData(object):
   year: int
+  filing_status: FilingStatus
   fed_allowances: int
   ca_allowances: int
   regular_wages: float = 0

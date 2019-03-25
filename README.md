@@ -33,7 +33,8 @@ optional arguments:
 See [example/input.yaml](example/input.yaml).
 
 The input file must start with `!InputData`, and must specify `year`,
-`fed_allowances`, and `ca_allowances`. All other values are optional.
+`filing_status`, `fed_allowances`, and `ca_allowances`. All other values are
+optional.
 
 Each value must be a number, or a list of numbers, or a map where the values are
 numbers. Lists and maps are allowed for convenience, to split up categories into
@@ -54,6 +55,11 @@ supplemental_wages:
 ## Examples
 
     estimated-taxes example/input.yaml > example/output.txt
+
+## TODO
+
+- Itemized deductions other than SALT
+- AMT
 
 ## License
 

@@ -19,6 +19,7 @@ def input_data_yaml_constructor(loader, node):
   raw_dict = loader.construct_mapping(node, deep=True)
 
   fields = {key: maybe_sum(value) for key, value in raw_dict.items()}
+  fields['filing_status'] = model.FilingStatus(fields['filing_status'])
 
   return model.InputData(**fields)
 
