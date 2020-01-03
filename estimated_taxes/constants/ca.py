@@ -131,10 +131,9 @@ STANDARD_DEDUCTION = {
         model.FilingStatus.SINGLE: 4401,
         model.FilingStatus.MARRIED: 8802,
     },
-    # TODO(nkouevda): Update
     2019: {
-        model.FilingStatus.SINGLE: 4401,
-        model.FilingStatus.MARRIED: 8802,
+        model.FilingStatus.SINGLE: 4537,
+        model.FilingStatus.MARRIED: 9074,
     },
 }
 
@@ -211,29 +210,28 @@ BRACKETS = {
             1145960: 0.123,
         }),
     },
-    # TODO(nkouevda): Update
     2019: {
         model.FilingStatus.SINGLE: model.BracketGroup.from_dict({
             0: 0.01,
-            8544: 0.02,
-            20255: 0.04,
-            31969: 0.06,
-            44377: 0.08,
-            56085: 0.093,
-            286492: 0.103,
-            343788: 0.113,
-            572980: 0.123,
+            8809: 0.02,
+            20883: 0.04,
+            32960: 0.06,
+            45753: 0.08,
+            57824: 0.093,
+            295373: 0.103,
+            354445: 0.113,
+            590742: 0.123,
         }),
         model.FilingStatus.MARRIED: model.BracketGroup.from_dict({
             0: 0.01,
-            17088: 0.02,
-            40510: 0.04,
-            63938: 0.06,
-            88754: 0.08,
-            112170: 0.093,
-            572984: 0.103,
-            687576: 0.113,
-            1145960: 0.123,
+            17618: 0.02,
+            41766: 0.04,
+            65920: 0.06,
+            91506: 0.08,
+            115648: 0.093,
+            590746: 0.103,
+            708890: 0.113,
+            1181484: 0.123,
         }),
     },
 }

@@ -60,7 +60,7 @@ def get_fed_tax(data, fed_withheld_tax, ca_withheld_tax):
   return model.TaxSummary(taxable_income, total_tax, paid_tax)
 
 
-# See https://www.ftb.ca.gov/forms/2018/18_540bk.pdf
+# See https://www.ftb.ca.gov/forms/2018/18-540-booklet.html
 def get_ca_tax(data, ca_withheld_tax):
   deduction = constants.ca.STANDARD_DEDUCTION[data.year][data.filing_status]
   adjustments = -data.state_tax_refund

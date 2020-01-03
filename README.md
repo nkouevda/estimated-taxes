@@ -4,7 +4,7 @@ Estimated taxes calculator.
 
 This is meant to help estimate additional tax payments throughout the year, i.e.
 for [IRS form 1040-ES](https://www.irs.gov/pub/irs-pdf/f1040es.pdf) and [CA form
-540-ES](https://www.ftb.ca.gov/forms/2019/19_540es.pdf).
+540-ES](https://www.ftb.ca.gov/forms/2019/2019-540-es.pdf).
 
 Please review the logic yourself if you intend to use this. It intentionally
 does not attempt to handle all forms and all scenarios; you will likely need to
