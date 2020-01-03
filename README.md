@@ -30,7 +30,7 @@ optional arguments:
 
 ## Input Format
 
-See [example/input.yaml](example/input.yaml).
+See [input/example.yaml](input/example.yaml).
 
 The input file must start with `!InputData`, and must specify `year`,
 `filing_status`, `fed_allowances`, and `ca_allowances`. All other values are
@@ -54,7 +54,7 @@ supplemental_wages:
 
 ## Examples
 
-    estimated-taxes example/input.yaml > example/output.txt
+    estimated-taxes input/example.yaml > output/example.txt
 
 ## TODO
 
