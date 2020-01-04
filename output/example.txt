@@ -21,7 +21,7 @@ error: -1250.00
 taxable wages: 164099.00
 estimated withholding: 13506.51 (8.23%)
 
-taxable income: 164099.00
-total tax: 12514.64 (7.63%)
-paid tax: 13506.51 (8.23%)
-error: 991.86
+taxable income: 163963.00
+total tax: 12416.84 (7.57%)
+paid tax: 13506.51 (8.24%)
+error: 1089.67
