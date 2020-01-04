@@ -1,4 +1,4 @@
-from setuptools import setup
+import setuptools
 
 version = {}
 
@@ -8,7 +8,7 @@ with open('estimated_taxes/__version__.py', 'r') as f:
 with open('README.md', 'r') as f:
   readme = f.read()
 
-setup(
+setuptools.setup(
     name='estimated-taxes',
     version=version['__version__'],
     description='Estimated taxes calculator',
@@ -18,7 +18,7 @@ setup(
     author='Nikita Kouevda',
     author_email='nkouevda@gmail.com',
     license='MIT',
-    packages=['estimated_taxes'],
+    packages=setuptools.find_packages(),
     entry_points={
         'console_scripts': [
             'estimated-taxes=estimated_taxes.estimated_taxes:main',
