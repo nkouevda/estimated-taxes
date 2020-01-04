@@ -19,6 +19,9 @@ setuptools.setup(
     author_email='nkouevda@gmail.com',
     license='MIT',
     packages=setuptools.find_packages(),
+    install_requires=[
+        'pyyaml',
+    ],
     entry_points={
         'console_scripts': [
             'estimated-taxes=estimated_taxes.estimated_taxes:main',
