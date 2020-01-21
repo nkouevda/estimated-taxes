@@ -2,7 +2,7 @@ from . import constants
 from . import model
 
 
-# See https://www.irs.gov/pub/irs-pdf/p15.pdf
+# See https://www.irs.gov/pub/irs-pdf/p15t.pdf
 def get_fed_withholding(data):
   allowance = data.fed_allowances * constants.fed.WITHHOLDING_ALLOWANCE[data.year]
   regular_taxable_wages = data.regular_wages + data.adjustments - allowance
@@ -17,7 +17,7 @@ def get_fed_withholding(data):
   return model.WithholdingSummary(taxable_wages, tax)
 
 
-# See https://www.edd.ca.gov/pdf_pub_ctr/19methb.pdf
+# See https://www.edd.ca.gov/pdf_pub_ctr/20methb.pdf
 def get_ca_withholding(data):
   # The previous year's standard deduction
   deduction = constants.ca.STANDARD_DEDUCTION[data.year - 1][data.filing_status]

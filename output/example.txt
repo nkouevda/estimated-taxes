@@ -1,6 +1,6 @@
 # General
 
-year: 2019
+year: 2020
 filing status: single
 
 W-2 wages: 168500.00
@@ -8,20 +8,20 @@ AGI: 168500.00
 
 # Federal
 
-taxable wages: 160100.00
-estimated withholding: 30436.50 (19.01%)
+taxable wages: 159900.00
+estimated withholding: 30293.50 (18.95%)
 
-taxable income: 156300.00
-total tax: 31686.50 (20.27%)
-paid tax: 30436.50 (19.47%)
+taxable income: 156100.00
+total tax: 31543.50 (20.21%)
+paid tax: 30293.50 (19.41%)
 error: -1250.00
 
 # CA
 
-taxable wages: 164099.00
-estimated withholding: 13506.51 (8.23%)
+taxable wages: 163963.00
+estimated withholding: 13390.12 (8.17%)
 
 taxable income: 163963.00
 total tax: 12416.84 (7.57%)
-paid tax: 13506.51 (8.24%)
-error: 1089.67
+paid tax: 13390.12 (8.17%)
+error: 973.28

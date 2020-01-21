@@ -5,6 +5,7 @@ WITHHOLDING_ALLOWANCE = {
     2017: 4050,
     2018: 4150,
     2019: 4200,
+    2020: 4300,
 }
 
 WITHHOLDING_BRACKETS = {
@@ -96,6 +97,28 @@ WITHHOLDING_BRACKETS = {
             624150: 0.37,
         }),
     },
+    2020: {
+        model.FilingStatus.SINGLE: model.BracketGroup.from_dict({
+            0: 0.00,
+            3800: 0.10,
+            13675: 0.12,
+            43925: 0.22,
+            89325: 0.24,
+            167100: 0.32,
+            211150: 0.35,
+            522200: 0.37,
+        }),
+        model.FilingStatus.MARRIED: model.BracketGroup.from_dict({
+            0: 0.00,
+            11900: 0.10,
+            31650: 0.12,
+            92150: 0.22,
+            182950: 0.24,
+            338500: 0.32,
+            426600: 0.35,
+            633950: 0.37,
+        }),
+    },
 }
 
 WITHHOLDING_SUPPLEMENTAL_RATE = {
@@ -103,6 +126,7 @@ WITHHOLDING_SUPPLEMENTAL_RATE = {
     2017: 0.25,
     2018: 0.22,
     2019: 0.22,
+    2020: 0.22,
 }
 
 STATE_TAX_DEDUCTION_LIMIT = {
@@ -110,6 +134,7 @@ STATE_TAX_DEDUCTION_LIMIT = {
     2017: float('inf'),
     2018: 10000,
     2019: 10000,
+    2020: 10000,
 }
 
 STANDARD_DEDUCTION = {
@@ -129,6 +154,10 @@ STANDARD_DEDUCTION = {
         model.FilingStatus.SINGLE: 12200,
         model.FilingStatus.MARRIED: 24400,
     },
+    2020: {
+        model.FilingStatus.SINGLE: 12400,
+        model.FilingStatus.MARRIED: 24800,
+    },
 }
 
 PERSONAL_EXEMPTION = {
@@ -136,6 +165,7 @@ PERSONAL_EXEMPTION = {
     2017: 4050,
     2018: 0,
     2019: 0,
+    2020: 0,
 }
 
 BRACKETS = {
@@ -219,6 +249,26 @@ BRACKETS = {
             612350: 0.37,
         }),
     },
+    2020: {
+        model.FilingStatus.SINGLE: model.BracketGroup.from_dict({
+            0: 0.10,
+            9875: 0.12,
+            40125: 0.22,
+            85525: 0.24,
+            163300: 0.32,
+            207350: 0.35,
+            518400: 0.37,
+        }),
+        model.FilingStatus.MARRIED: model.BracketGroup.from_dict({
+            0: 0.10,
+            19750: 0.12,
+            80250: 0.22,
+            171050: 0.24,
+            326600: 0.32,
+            414700: 0.35,
+            622050: 0.37,
+        }),
+    },
 }
 
 QUALIFIED_DIVIDENDS_RATE = 0.15
@@ -240,6 +290,10 @@ ADDITIONAL_MEDICARE_TAX = {
         model.FilingStatus.SINGLE: model.AdditionalTax(200000, 0.009),
         model.FilingStatus.MARRIED: model.AdditionalTax(250000, 0.009),
     },
+    2020: {
+        model.FilingStatus.SINGLE: model.AdditionalTax(200000, 0.009),
+        model.FilingStatus.MARRIED: model.AdditionalTax(250000, 0.009),
+    },
 }
 
 NET_INVESTMENT_INCOME_TAX = {
@@ -256,6 +310,10 @@ NET_INVESTMENT_INCOME_TAX = {
         model.FilingStatus.MARRIED: model.AdditionalTax(250000, 0.038),
     },
     2019: {
+        model.FilingStatus.SINGLE: model.AdditionalTax(200000, 0.038),
+        model.FilingStatus.MARRIED: model.AdditionalTax(250000, 0.038),
+    },
+    2020: {
         model.FilingStatus.SINGLE: model.AdditionalTax(200000, 0.038),
         model.FilingStatus.MARRIED: model.AdditionalTax(250000, 0.038),
     },

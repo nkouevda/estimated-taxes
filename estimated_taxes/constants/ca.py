@@ -5,6 +5,7 @@ WITHHOLDING_ALLOWANCE = {
     2017: 122.10,
     2018: 125.40,
     2019: 129.80,
+    2020: 134.20,
 }
 
 WITHHOLDING_BRACKETS = {
@@ -112,6 +113,32 @@ WITHHOLDING_BRACKETS = {
             1145960: 0.1463,
         }),
     },
+    2020: {
+        model.FilingStatus.SINGLE: model.BracketGroup.from_dict({
+            0: 0.011,
+            8809: 0.022,
+            20883: 0.044,
+            32960: 0.066,
+            45753: 0.088,
+            57824: 0.1023,
+            295373: 0.1133,
+            354445: 0.1243,
+            590742: 0.1353,
+            1000000: 0.1463,
+        }),
+        model.FilingStatus.MARRIED: model.BracketGroup.from_dict({
+            0: 0.011,
+            17618: 0.022,
+            41766: 0.044,
+            65920: 0.066,
+            91506: 0.088,
+            115648: 0.1023,
+            590746: 0.1133,
+            708890: 0.1243,
+            1000000: 0.1353,
+            1181484: 0.1463,
+        }),
+    },
 }
 
 STANDARD_DEDUCTION = {
@@ -132,6 +159,11 @@ STANDARD_DEDUCTION = {
         model.FilingStatus.MARRIED: 8802,
     },
     2019: {
+        model.FilingStatus.SINGLE: 4537,
+        model.FilingStatus.MARRIED: 9074,
+    },
+    # TODO(nkouevda): Update
+    2020: {
         model.FilingStatus.SINGLE: 4537,
         model.FilingStatus.MARRIED: 9074,
     },
@@ -211,6 +243,31 @@ BRACKETS = {
         }),
     },
     2019: {
+        model.FilingStatus.SINGLE: model.BracketGroup.from_dict({
+            0: 0.01,
+            8809: 0.02,
+            20883: 0.04,
+            32960: 0.06,
+            45753: 0.08,
+            57824: 0.093,
+            295373: 0.103,
+            354445: 0.113,
+            590742: 0.123,
+        }),
+        model.FilingStatus.MARRIED: model.BracketGroup.from_dict({
+            0: 0.01,
+            17618: 0.02,
+            41766: 0.04,
+            65920: 0.06,
+            91506: 0.08,
+            115648: 0.093,
+            590746: 0.103,
+            708890: 0.113,
+            1181484: 0.123,
+        }),
+    },
+    # TODO(nkouevda): Update
+    2020: {
         model.FilingStatus.SINGLE: model.BracketGroup.from_dict({
             0: 0.01,
             8809: 0.02,
