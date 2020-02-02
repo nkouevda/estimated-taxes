@@ -69,7 +69,7 @@ def get_fed_tax(data, fed_withheld_tax, ca_withheld_tax):
 # See https://www.ftb.ca.gov/forms/2018/18-540-booklet.html
 def get_ca_tax(data, ca_withheld_tax):
   deduction = constants.ca.STANDARD_DEDUCTION[data.year][data.filing_status]
-  adjustments = -data.state_tax_refund
+  adjustments = -data.state_tax_refund if data.year <= 2018 else 0
   taxable_income = data.agi + adjustments - deduction
 
   total_tax = constants.ca.BRACKETS[data.year][data.filing_status].get_tax(taxable_income)

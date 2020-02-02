@@ -108,7 +108,8 @@ class InputData(object):
 
   @property
   def agi(self):
-    return self.w2_wages + self.investment_income + self.state_tax_refund + self.other_income
+    return self.w2_wages + self.investment_income + self.other_income + (
+        self.state_tax_refund if self.year <= 2018 else 0)
 
 
 @dataclass(frozen=True)
