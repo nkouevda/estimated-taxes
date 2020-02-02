@@ -46,7 +46,13 @@ def get_fed_tax(data, fed_withheld_tax, ca_withheld_tax):
   net_investment_income_tax = (
       constants.fed.NET_INVESTMENT_INCOME_TAX[data.year][data.filing_status].get_tax(
           data.agi, limit=max(data.investment_income, 0)))
-  credits = data.dividends_foreign_tax
+
+  # See https://www.irs.gov/pub/irs-pdf/i1116.pdf
+  credits = (
+      data.dividends_foreign_tax
+      if data.dividends_foreign_tax <= constants.fed.FOREIGN_TAX_CREDIT_LIMIT
+      else 0)
+
   total_tax = (
       constants.fed.BRACKETS[data.year][data.filing_status].get_tax(
           taxable_income - data.qualified_dividends)

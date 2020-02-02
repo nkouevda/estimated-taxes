@@ -168,6 +168,8 @@ PERSONAL_EXEMPTION = {
     2020: 0,
 }
 
+FOREIGN_TAX_CREDIT_LIMIT = 300
+
 BRACKETS = {
     2016: {
         model.FilingStatus.SINGLE: model.BracketGroup.from_dict({
