@@ -58,6 +58,7 @@ supplemental_wages:
 
 ## TODO
 
+- Long term capital gains 20% above some point
 - Itemized deductions other than SALT
 - AMT
 
