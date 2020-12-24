@@ -16,6 +16,10 @@ See also [nkouevda/capital-gains](https://github.com/nkouevda/capital-gains).
 
     pip install estimated-taxes
 
+Or:
+
+    brew install nkouevda/nkouevda/estimated-taxes
+
 ## Usage
 
 ```
