@@ -273,7 +273,68 @@ BRACKETS = {
     },
 }
 
-LONG_TERM_CAPITAL_GAINS_RATE = 0.15
+LONG_TERM_CAPITAL_GAINS_TAX = {
+    2016: {
+        model.FilingStatus.SINGLE: model.BracketGroup.from_dict({
+            0: 0.0,
+            37650: 0.15,
+            415050: 0.20,
+        }),
+        model.FilingStatus.MARRIED: model.BracketGroup.from_dict({
+            0: 0.0,
+            75300: 0.15,
+            466950: 0.20,
+        }),
+    },
+    2017: {
+        model.FilingStatus.SINGLE: model.BracketGroup.from_dict({
+            0: 0.0,
+            37950: 0.15,
+            418400: 0.20,
+        }),
+        model.FilingStatus.MARRIED: model.BracketGroup.from_dict({
+            0: 0.0,
+            75900: 0.15,
+            470700: 0.20,
+        }),
+    },
+    2018: {
+        model.FilingStatus.SINGLE: model.BracketGroup.from_dict({
+            0: 0.0,
+            38600: 0.15,
+            425800: 0.20,
+        }),
+        model.FilingStatus.MARRIED: model.BracketGroup.from_dict({
+            0: 0.0,
+            77200: 0.15,
+            479000: 0.20,
+        }),
+    },
+    2019: {
+        model.FilingStatus.SINGLE: model.BracketGroup.from_dict({
+            0: 0.0,
+            39375: 0.15,
+            434550: 0.20,
+        }),
+        model.FilingStatus.MARRIED: model.BracketGroup.from_dict({
+            0: 0.0,
+            78750: 0.15,
+            488850: 0.20,
+        }),
+    },
+    2020: {
+        model.FilingStatus.SINGLE: model.BracketGroup.from_dict({
+            0: 0.0,
+            40000: 0.15,
+            441450: 0.20,
+        }),
+        model.FilingStatus.MARRIED: model.BracketGroup.from_dict({
+            0: 0.0,
+            80000: 0.15,
+            496600: 0.20,
+        }),
+    },
+}
 
 ADDITIONAL_MEDICARE_TAX = {
     2016: {

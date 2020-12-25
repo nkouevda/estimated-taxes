@@ -41,7 +41,9 @@ def get_fed_tax(data, fed_withheld_tax, ca_withheld_tax):
   taxable_income = data.agi - deduction - exemption
 
   long_term_taxable_income = max(data.long_term_capital_gains, 0) + data.qualified_dividends
-  long_term_tax = long_term_taxable_income * constants.fed.LONG_TERM_CAPITAL_GAINS_RATE
+  ltcg_bracket_group = constants.fed.LONG_TERM_CAPITAL_GAINS_TAX[data.year][data.filing_status]
+  long_term_tax = ltcg_bracket_group.get_tax(taxable_income) - ltcg_bracket_group.get_tax(
+      taxable_income - long_term_taxable_income)
 
   additional_medicare_tax = (
       constants.fed.ADDITIONAL_MEDICARE_TAX[data.year][data.filing_status].get_tax(
