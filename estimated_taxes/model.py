@@ -2,6 +2,10 @@ from dataclasses import dataclass
 from enum import Enum
 from typing import List
 
+# `constants.*` depends on `model`, so we can't import from `constants` here
+MIN_YEAR = 2016
+MAX_YEAR = 2020
+
 
 class FilingStatus(Enum):
   SINGLE = 1
@@ -83,8 +87,10 @@ class InputData(object):
   ca_other_payments: float = 0
 
   def __post_init__(self):
+    if not (MIN_YEAR <= self.year <= MAX_YEAR):
+      raise ValueError(f'Year must be {MIN_YEAR} <= year <= {MAX_YEAR}, but was: {self.year}')
     if self.k401 < 0:
-      raise ValueError(f'401(k) value must be nonnegative: {self.k401}')
+      raise ValueError(f'401(k) value must be nonnegative, but was: {self.k401}')
 
   @property
   def adjustments(self):
