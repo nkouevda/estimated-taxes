@@ -1,7 +1,6 @@
-from .. import model
+"""California tax constants.
 
-"""
-Reference documents
+These numbers are from the following documents:
 
 - Income tax withholding
   - https://www.edd.ca.gov/pdf_pub_ctr/de44-16.pdf
@@ -16,6 +15,8 @@ Reference documents
   - (2018 is only available by request)
   - https://www.ftb.ca.gov/forms/2019/2019-540-booklet.pdf
 """
+
+from .. import model
 
 WITHHOLDING_ALLOWANCE = {
     2016: 119.90,

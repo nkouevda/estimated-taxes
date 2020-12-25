@@ -1,15 +1,14 @@
-from .. import model
+"""Federal tax constants.
 
-"""
-Reference documents
+These numbers are from the following documents:
 
 - Income tax withholding
- - https://www.irs.gov/pub/irs-prior/p15--2016.pdf
- - https://www.irs.gov/pub/irs-prior/p15--2017.pdf
- - https://www.irs.gov/pub/irs-prior/p15--2018.pdf
- - https://www.irs.gov/pub/irs-prior/p15--2019.pdf
- - https://www.irs.gov/pub/irs-prior/p15--2020.pdf
- - https://www.irs.gov/pub/irs-pdf/p15.pdf
+  - https://www.irs.gov/pub/irs-prior/p15--2016.pdf
+  - https://www.irs.gov/pub/irs-prior/p15--2017.pdf
+  - https://www.irs.gov/pub/irs-prior/p15--2018.pdf
+  - https://www.irs.gov/pub/irs-prior/p15--2019.pdf
+  - https://www.irs.gov/pub/irs-prior/p15--2020.pdf
+  - https://www.irs.gov/pub/irs-pdf/p15.pdf
 
 - Income tax
   - https://www.irs.gov/pub/irs-prior/i1040gi--2016.pdf
@@ -18,6 +17,8 @@ Reference documents
   - https://www.irs.gov/pub/irs-prior/i1040gi--2019.pdf
   - https://www.irs.gov/pub/irs-pdf/i1040gi.pdf
 """
+
+from .. import model
 
 WITHHOLDING_ALLOWANCE = {
     2016: 4050,
