@@ -2,13 +2,13 @@ from . import constants
 from . import model
 
 
-# See https://www.irs.gov/pub/irs-pdf/p15t.pdf
+# See https://www.irs.gov/pub/irs-pdf/p15.pdf
 def get_fed_withholding(data):
   allowance = data.fed_allowances * constants.fed.WITHHOLDING_ALLOWANCE[data.year]
   regular_taxable_wages = data.regular_wages + data.adjustments - allowance
   taxable_wages = regular_taxable_wages + data.supplemental_wages
 
-  regular_tax = constants.fed.WITHHOLDING_BRACKETS[data.year][data.filing_status].get_tax(
+  regular_tax = constants.fed.INCOME_TAX_WITHHOLDING[data.year][data.filing_status].get_tax(
       regular_taxable_wages)
   supplemental_tax = (
       data.supplemental_wages * constants.fed.WITHHOLDING_SUPPLEMENTAL_RATE[data.year])
@@ -24,7 +24,7 @@ def get_ca_withholding(data):
   taxable_wages = data.regular_wages + data.supplemental_wages + data.adjustments - deduction
 
   allowance = data.ca_allowances * constants.ca.WITHHOLDING_ALLOWANCE[data.year]
-  tax = constants.ca.WITHHOLDING_BRACKETS[data.year][data.filing_status].get_tax(
+  tax = constants.ca.INCOME_TAX_WITHHOLDING[data.year][data.filing_status].get_tax(
       taxable_wages) - allowance
 
   return model.WithholdingSummary(taxable_wages, tax)
@@ -57,7 +57,7 @@ def get_fed_tax(data, fed_withheld_tax, ca_withheld_tax):
       else 0)
 
   total_tax = (
-      constants.fed.BRACKETS[data.year][data.filing_status].get_tax(
+      constants.fed.INCOME_TAX[data.year][data.filing_status].get_tax(
           taxable_income - long_term_taxable_income)
       + long_term_tax
       + additional_medicare_tax
@@ -69,13 +69,13 @@ def get_fed_tax(data, fed_withheld_tax, ca_withheld_tax):
   return model.TaxSummary(taxable_income, total_tax, paid_tax)
 
 
-# See https://www.ftb.ca.gov/forms/2018/18-540-booklet.html
+# See https://www.ftb.ca.gov/forms/2019/2019-540-booklet.pdf
 def get_ca_tax(data, ca_withheld_tax):
   deduction = constants.ca.STANDARD_DEDUCTION[data.year][data.filing_status]
   adjustments = -data.state_tax_refund if data.year <= 2018 else 0
   taxable_income = data.agi + adjustments - deduction
 
-  total_tax = constants.ca.BRACKETS[data.year][data.filing_status].get_tax(taxable_income)
+  total_tax = constants.ca.INCOME_TAX[data.year][data.filing_status].get_tax(taxable_income)
 
   paid_tax = ca_withheld_tax + data.ca_estimated_tax
 

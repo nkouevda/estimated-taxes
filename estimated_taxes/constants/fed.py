@@ -1,5 +1,24 @@
 from .. import model
 
+"""
+Reference documents
+
+- Income tax withholding
+ - https://www.irs.gov/pub/irs-prior/p15--2016.pdf
+ - https://www.irs.gov/pub/irs-prior/p15--2017.pdf
+ - https://www.irs.gov/pub/irs-prior/p15--2018.pdf
+ - https://www.irs.gov/pub/irs-prior/p15--2019.pdf
+ - https://www.irs.gov/pub/irs-prior/p15--2020.pdf
+ - https://www.irs.gov/pub/irs-pdf/p15.pdf
+
+- Income tax
+  - https://www.irs.gov/pub/irs-prior/i1040gi--2016.pdf
+  - https://www.irs.gov/pub/irs-prior/i1040gi--2017.pdf
+  - https://www.irs.gov/pub/irs-prior/i1040gi--2018.pdf
+  - https://www.irs.gov/pub/irs-prior/i1040gi--2019.pdf
+  - https://www.irs.gov/pub/irs-pdf/i1040gi.pdf
+"""
+
 WITHHOLDING_ALLOWANCE = {
     2016: 4050,
     2017: 4050,
@@ -8,7 +27,7 @@ WITHHOLDING_ALLOWANCE = {
     2020: 4300,
 }
 
-WITHHOLDING_BRACKETS = {
+INCOME_TAX_WITHHOLDING = {
     2016: {
         model.FilingStatus.SINGLE: model.BracketGroup.from_dict({
             0: 0.00,
@@ -170,7 +189,7 @@ PERSONAL_EXEMPTION = {
 
 FOREIGN_TAX_CREDIT_LIMIT = 300
 
-BRACKETS = {
+INCOME_TAX = {
     2016: {
         model.FilingStatus.SINGLE: model.BracketGroup.from_dict({
             0: 0.10,

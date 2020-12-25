@@ -1,5 +1,22 @@
 from .. import model
 
+"""
+Reference documents
+
+- Income tax withholding
+  - https://www.edd.ca.gov/pdf_pub_ctr/de44-16.pdf
+  - https://www.edd.ca.gov/pdf_pub_ctr/de44-17.pdf
+  - https://www.edd.ca.gov/pdf_pub_ctr/de44-18.pdf
+  - https://www.edd.ca.gov/pdf_pub_ctr/de44-19.pdf
+  - https://www.edd.ca.gov/pdf_pub_ctr/20methb.pdf
+
+- Income tax
+  - https://www.ftb.ca.gov/forms/2016/16_540bk.pdf
+  - https://www.ftb.ca.gov/forms/2017/17-540-booklet.html
+  - (2018 is only available by request)
+  - https://www.ftb.ca.gov/forms/2019/2019-540-booklet.pdf
+"""
+
 WITHHOLDING_ALLOWANCE = {
     2016: 119.90,
     2017: 122.10,
@@ -8,7 +25,7 @@ WITHHOLDING_ALLOWANCE = {
     2020: 134.20,
 }
 
-WITHHOLDING_BRACKETS = {
+INCOME_TAX_WITHHOLDING = {
     2016: {
         model.FilingStatus.SINGLE: model.BracketGroup.from_dict({
             0: 0.011,
@@ -168,7 +185,7 @@ STANDARD_DEDUCTION = {
     },
 }
 
-BRACKETS = {
+INCOME_TAX = {
     2016: {
         model.FilingStatus.SINGLE: model.BracketGroup.from_dict({
             0: 0.01,
