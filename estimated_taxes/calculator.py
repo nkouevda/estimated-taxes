@@ -45,12 +45,10 @@ def get_fed_tax(data, fed_withheld_tax, ca_withheld_tax):
   long_term_tax = ltcg_bracket_group.get_tax(taxable_income) - ltcg_bracket_group.get_tax(
       taxable_income - long_term_taxable_income)
 
-  additional_medicare_tax = (
-      constants.fed.ADDITIONAL_MEDICARE_TAX[data.year][data.filing_status].get_tax(
-          data.medicare_wages))
-  net_investment_income_tax = (
-      constants.fed.NET_INVESTMENT_INCOME_TAX[data.year][data.filing_status].get_tax(
-          data.agi, limit=max(data.investment_income, 0)))
+  additional_medicare_tax = constants.fed.ADDITIONAL_MEDICARE_TAX[data.filing_status].get_tax(
+      data.medicare_wages)
+  net_investment_income_tax = constants.fed.NET_INVESTMENT_INCOME_TAX[data.filing_status].get_tax(
+      data.agi, limit=max(data.investment_income, 0))
 
   # See https://www.irs.gov/pub/irs-pdf/i1116.pdf
   credits = (

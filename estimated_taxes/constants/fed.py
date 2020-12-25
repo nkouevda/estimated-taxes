@@ -337,47 +337,11 @@ LONG_TERM_CAPITAL_GAINS_TAX = {
 }
 
 ADDITIONAL_MEDICARE_TAX = {
-    2016: {
-        model.FilingStatus.SINGLE: model.AdditionalTax(200000, 0.009),
-        model.FilingStatus.MARRIED: model.AdditionalTax(250000, 0.009),
-    },
-    2017: {
-        model.FilingStatus.SINGLE: model.AdditionalTax(200000, 0.009),
-        model.FilingStatus.MARRIED: model.AdditionalTax(250000, 0.009),
-    },
-    2018: {
-        model.FilingStatus.SINGLE: model.AdditionalTax(200000, 0.009),
-        model.FilingStatus.MARRIED: model.AdditionalTax(250000, 0.009),
-    },
-    2019: {
-        model.FilingStatus.SINGLE: model.AdditionalTax(200000, 0.009),
-        model.FilingStatus.MARRIED: model.AdditionalTax(250000, 0.009),
-    },
-    2020: {
-        model.FilingStatus.SINGLE: model.AdditionalTax(200000, 0.009),
-        model.FilingStatus.MARRIED: model.AdditionalTax(250000, 0.009),
-    },
+    model.FilingStatus.SINGLE: model.AdditionalTax(200000, 0.009),
+    model.FilingStatus.MARRIED: model.AdditionalTax(250000, 0.009),
 }
 
 NET_INVESTMENT_INCOME_TAX = {
-    2016: {
-        model.FilingStatus.SINGLE: model.AdditionalTax(200000, 0.038),
-        model.FilingStatus.MARRIED: model.AdditionalTax(250000, 0.038),
-    },
-    2017: {
-        model.FilingStatus.SINGLE: model.AdditionalTax(200000, 0.038),
-        model.FilingStatus.MARRIED: model.AdditionalTax(250000, 0.038),
-    },
-    2018: {
-        model.FilingStatus.SINGLE: model.AdditionalTax(200000, 0.038),
-        model.FilingStatus.MARRIED: model.AdditionalTax(250000, 0.038),
-    },
-    2019: {
-        model.FilingStatus.SINGLE: model.AdditionalTax(200000, 0.038),
-        model.FilingStatus.MARRIED: model.AdditionalTax(250000, 0.038),
-    },
-    2020: {
-        model.FilingStatus.SINGLE: model.AdditionalTax(200000, 0.038),
-        model.FilingStatus.MARRIED: model.AdditionalTax(250000, 0.038),
-    },
+    model.FilingStatus.SINGLE: model.AdditionalTax(200000, 0.038),
+    model.FilingStatus.MARRIED: model.AdditionalTax(250000, 0.038),
 }
