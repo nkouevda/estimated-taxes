@@ -26,6 +26,7 @@ WITHHOLDING_ALLOWANCE = {
     2018: 4150,
     2019: 4200,
     2020: 4300,
+    2021: 4300,
 }
 
 INCOME_TAX_WITHHOLDING = {
@@ -139,6 +140,28 @@ INCOME_TAX_WITHHOLDING = {
             633950: 0.37,
         }),
     },
+    2021: {
+        model.FilingStatus.SINGLE: model.BracketGroup.from_dict({
+            0: 0.00,
+            3950: 0.10,
+            13900: 0.12,
+            44475: 0.22,
+            90325: 0.24,
+            168875: 0.32,
+            213375: 0.35,
+            527550: 0.37,
+        }),
+        model.FilingStatus.MARRIED: model.BracketGroup.from_dict({
+            0: 0.00,
+            12200: 0.10,
+            32100: 0.12,
+            93250: 0.22,
+            184950: 0.24,
+            342050: 0.32,
+            431050: 0.35,
+            640500: 0.37,
+        }),
+    },
 }
 
 WITHHOLDING_SUPPLEMENTAL_RATE = {
@@ -147,6 +170,7 @@ WITHHOLDING_SUPPLEMENTAL_RATE = {
     2018: 0.22,
     2019: 0.22,
     2020: 0.22,
+    2021: 0.22,
 }
 
 STATE_TAX_DEDUCTION_LIMIT = {
@@ -155,6 +179,7 @@ STATE_TAX_DEDUCTION_LIMIT = {
     2018: 10000,
     2019: 10000,
     2020: 10000,
+    2021: 10000,
 }
 
 STANDARD_DEDUCTION = {
@@ -178,6 +203,10 @@ STANDARD_DEDUCTION = {
         model.FilingStatus.SINGLE: 12400,
         model.FilingStatus.MARRIED: 24800,
     },
+    2021: {
+        model.FilingStatus.SINGLE: 12550,
+        model.FilingStatus.MARRIED: 25100,
+    },
 }
 
 PERSONAL_EXEMPTION = {
@@ -186,6 +215,7 @@ PERSONAL_EXEMPTION = {
     2018: 0,
     2019: 0,
     2020: 0,
+    2021: 0,
 }
 
 FOREIGN_TAX_CREDIT_LIMIT = 300
@@ -291,6 +321,26 @@ INCOME_TAX = {
             622050: 0.37,
         }),
     },
+    2021: {
+        model.FilingStatus.SINGLE: model.BracketGroup.from_dict({
+            0: 0.10,
+            9950: 0.12,
+            40525: 0.22,
+            86375: 0.24,
+            164925: 0.32,
+            209425: 0.35,
+            523600: 0.37,
+        }),
+        model.FilingStatus.MARRIED: model.BracketGroup.from_dict({
+            0: 0.10,
+            19900: 0.12,
+            81050: 0.22,
+            172750: 0.24,
+            329850: 0.32,
+            418850: 0.35,
+            628300: 0.37,
+        }),
+    },
 }
 
 LONG_TERM_CAPITAL_GAINS_TAX = {
@@ -352,6 +402,18 @@ LONG_TERM_CAPITAL_GAINS_TAX = {
             0: 0.0,
             80000: 0.15,
             496600: 0.20,
+        }),
+    },
+    2021: {
+        model.FilingStatus.SINGLE: model.BracketGroup.from_dict({
+            0: 0.0,
+            40400: 0.15,
+            445850: 0.20,
+        }),
+        model.FilingStatus.MARRIED: model.BracketGroup.from_dict({
+            0: 0.0,
+            80800: 0.15,
+            501600: 0.20,
         }),
     },
 }

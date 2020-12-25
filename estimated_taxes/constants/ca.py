@@ -8,6 +8,7 @@ These numbers are from the following documents:
   - https://www.edd.ca.gov/pdf_pub_ctr/de44-18.pdf
   - https://www.edd.ca.gov/pdf_pub_ctr/de44-19.pdf
   - https://www.edd.ca.gov/pdf_pub_ctr/20methb.pdf
+  - https://www.edd.ca.gov/pdf_pub_ctr/21methb.pdf
 
 - Income tax
   - https://www.ftb.ca.gov/forms/2016/16_540bk.pdf
@@ -24,6 +25,7 @@ WITHHOLDING_ALLOWANCE = {
     2018: 125.40,
     2019: 129.80,
     2020: 134.20,
+    2021: 136.40,
 }
 
 INCOME_TAX_WITHHOLDING = {
@@ -157,6 +159,32 @@ INCOME_TAX_WITHHOLDING = {
             1181484: 0.1463,
         }),
     },
+    2021: {
+        model.FilingStatus.SINGLE: model.BracketGroup.from_dict({
+            0: 0.011,
+            8932: 0.022,
+            21175: 0.044,
+            33421: 0.066,
+            46394: 0.088,
+            58634: 0.1023,
+            299508: 0.1133,
+            359407: 0.1243,
+            599012: 0.1353,
+            1000000: 0.1463,
+        }),
+        model.FilingStatus.MARRIED: model.BracketGroup.from_dict({
+            0: 0.011,
+            17864: 0.022,
+            42350: 0.044,
+            66842: 0.066,
+            92788: 0.088,
+            117268: 0.1023,
+            599016: 0.1133,
+            718814: 0.1243,
+            1000000: 0.1353,
+            1198024: 0.1463,
+        }),
+    },
 }
 
 STANDARD_DEDUCTION = {
@@ -181,6 +209,11 @@ STANDARD_DEDUCTION = {
         model.FilingStatus.MARRIED: 9074,
     },
     2020: {
+        model.FilingStatus.SINGLE: 4601,
+        model.FilingStatus.MARRIED: 9202,
+    },
+    # TODO(nkouevda): Update; copied from 2020 for now
+    2021: {
         model.FilingStatus.SINGLE: 4601,
         model.FilingStatus.MARRIED: 9202,
     },
@@ -284,6 +317,31 @@ INCOME_TAX = {
         }),
     },
     2020: {
+        model.FilingStatus.SINGLE: model.BracketGroup.from_dict({
+            0: 0.01,
+            8932: 0.02,
+            21175: 0.04,
+            33421: 0.06,
+            46394: 0.08,
+            58634: 0.093,
+            299508: 0.103,
+            359407: 0.113,
+            599012: 0.123,
+        }),
+        model.FilingStatus.MARRIED: model.BracketGroup.from_dict({
+            0: 0.01,
+            17864: 0.02,
+            42350: 0.04,
+            66842: 0.06,
+            92788: 0.08,
+            117268: 0.093,
+            599016: 0.103,
+            718814: 0.113,
+            1198024: 0.123,
+        }),
+    },
+    # TODO(nkouevda): Update; copied from 2020 for now
+    2021: {
         model.FilingStatus.SINGLE: model.BracketGroup.from_dict({
             0: 0.01,
             8932: 0.02,

@@ -17,7 +17,7 @@ def get_fed_withholding(data):
   return model.WithholdingSummary(taxable_wages, tax)
 
 
-# See https://www.edd.ca.gov/pdf_pub_ctr/20methb.pdf
+# See https://www.edd.ca.gov/pdf_pub_ctr/21methb.pdf
 def get_ca_withholding(data):
   # The previous year's standard deduction
   deduction = constants.ca.STANDARD_DEDUCTION[data.year - 1][data.filing_status]

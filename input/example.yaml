@@ -1,7 +1,7 @@
 !InputData
 
 # Required fields
-year: 2020
+year: 2021
 # 1 for single, 2 for married
 filing_status: 1
 fed_allowances: 2
