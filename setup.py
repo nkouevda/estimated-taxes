@@ -24,7 +24,7 @@ setuptools.setup(
     ],
     entry_points={
         'console_scripts': [
-            'estimated-taxes=estimated_taxes.estimated_taxes:main',
+            'estimated-taxes=estimated_taxes.__main__:main',
         ],
     },
 )

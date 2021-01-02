@@ -1,3 +1,5 @@
+import sys
+
 from . import argument_parser
 from . import calculator
 from . import formatter
@@ -19,6 +21,8 @@ def main():
   output = formatter.format(data, fed_withholding, ca_withholding, fed_tax, ca_tax)
   print(output)
 
+  return 0
+
 
 if __name__ == '__main__':
-  main()
+  sys.exit(main())
