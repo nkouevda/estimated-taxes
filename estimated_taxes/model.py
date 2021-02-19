@@ -9,7 +9,8 @@ MAX_YEAR = 2021
 
 class FilingStatus(Enum):
   SINGLE = 1
-  MARRIED = 2
+  MARRIED_JOINTLY = 2
+  MARRIED_SEPARATELY = 3
 
 
 @dataclass(frozen=True)
