@@ -188,6 +188,15 @@ INCOME_TAX_WITHHOLDING = util.copy_single_to_married_separately({
     },
 })
 
+WITHHOLDING_SUPPLEMENTAL_RATE = {
+    2016: 0.1023,
+    2017: 0.1023,
+    2018: 0.1023,
+    2019: 0.1023,
+    2020: 0.1023,
+    2021: 0.1023,
+}
+
 STANDARD_DEDUCTION = util.copy_single_to_married_separately({
     2015: {
         model.FilingStatus.SINGLE: 4044,

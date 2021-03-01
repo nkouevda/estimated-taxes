@@ -21,11 +21,14 @@ def get_fed_withholding(data):
 def get_ca_withholding(data):
   # The previous year's standard deduction
   deduction = constants.ca.STANDARD_DEDUCTION[data.year - 1][data.filing_status]
-  taxable_wages = data.regular_wages + data.supplemental_wages + data.adjustments - deduction
+  regular_taxable_wages = data.regular_wages + data.adjustments - deduction
+  taxable_wages = regular_taxable_wages + data.supplemental_wages
 
   allowance = data.ca_allowances * constants.ca.WITHHOLDING_ALLOWANCE[data.year]
-  tax = constants.ca.INCOME_TAX_WITHHOLDING[data.year][data.filing_status].get_tax(
-      taxable_wages) - allowance
+  regular_tax = constants.ca.INCOME_TAX_WITHHOLDING[data.year][data.filing_status].get_tax(
+      regular_taxable_wages) - allowance
+  supplemental_tax = data.supplemental_wages * constants.ca.WITHHOLDING_SUPPLEMENTAL_RATE[data.year]
+  tax = regular_tax + supplemental_tax
 
   return model.WithholdingSummary(taxable_wages, tax)
 
