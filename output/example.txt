@@ -1,6 +1,6 @@
 # General
 
-year: 2021
+year: 2022
 filing status: single
 
 W-2 wages: 168500.00
@@ -11,17 +11,17 @@ AGI: 168500.00
 taxable wages: 159900.00
 estimated withholding: 30199.00 (18.89%)
 
-taxable income: 155950.00
-total tax: 31449.00 (20.17%)
-paid tax: 30199.00 (19.36%)
-error: -1250.00
+taxable income: 155550.00
+total tax: 31167.50 (20.04%)
+paid tax: 30199.00 (19.41%)
+error: -968.50
 
 # CA
 
-taxable wages: 163899.00
-estimated withholding: 13335.57 (8.14%)
+taxable wages: 163697.00
+estimated withholding: 13175.92 (8.05%)
 
-taxable income: 163899.00
-total tax: 12371.25 (7.55%)
-paid tax: 13335.57 (8.14%)
-error: 964.32
+taxable income: 163697.00
+total tax: 12226.11 (7.47%)
+paid tax: 13175.92 (8.05%)
+error: 949.81

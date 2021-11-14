@@ -8,7 +8,7 @@
 # - For everything else (supplemental_wages, untaxed_wages, interest, dividends, etc.), assuming you
 #   want to pay estimated taxes "as you go" and not all at once, enter the amount earned YTD
 
-year: 2021
+year: 2022
 # Filing status: 1 = single, 2 = married filing jointly, 3 = married filing separately
 filing_status: 1
 fed_allowances: 2
