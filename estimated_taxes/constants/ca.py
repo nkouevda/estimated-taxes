@@ -9,7 +9,7 @@ These numbers are from the following documents:
   - https://www.edd.ca.gov/pdf_pub_ctr/de44-19.pdf
   - https://www.edd.ca.gov/pdf_pub_ctr/20methb.pdf
   - https://www.edd.ca.gov/pdf_pub_ctr/21methb.pdf
-  - TODO: 2022
+  - https://www.edd.ca.gov/pdf_pub_ctr/22methb.pdf
 
 - Income tax
   - https://www.ftb.ca.gov/forms/2016/16_540bk.pdf
@@ -17,7 +17,7 @@ These numbers are from the following documents:
   - (2018 is only available by request)
   - https://www.ftb.ca.gov/forms/2019/2019-540-booklet.html
   - https://www.ftb.ca.gov/forms/2020/2020-540-booklet.pdf
-  - TODO: 2021
+  - https://www.ftb.ca.gov/forms/2021/2021-540-booklet.pdf
 """
 
 from . import util
@@ -30,8 +30,7 @@ WITHHOLDING_ALLOWANCE = {
     2019: 129.80,
     2020: 134.20,
     2021: 136.40,
-    # TODO: 2022
-    2022: 136.40,
+    2022: 141.90,
 }
 
 INCOME_TAX_WITHHOLDING = util.copy_single_to_married_separately({

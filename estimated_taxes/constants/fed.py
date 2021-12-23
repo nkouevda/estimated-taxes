@@ -9,7 +9,7 @@ These numbers are from the following documents:
   - https://www.irs.gov/pub/irs-prior/p15--2019.pdf
   - https://www.irs.gov/pub/irs-prior/p15t--2020.pdf
   - https://www.irs.gov/pub/irs-prior/p15t--2021.pdf
-  - TODO: 2022
+  - https://www.irs.gov/pub/irs-prior/p15t--2022.pdf
   - https://www.irs.gov/pub/irs-pdf/p15t.pdf
 
 - Income tax
@@ -18,7 +18,7 @@ These numbers are from the following documents:
   - https://www.irs.gov/pub/irs-prior/i1040gi--2018.pdf
   - https://www.irs.gov/pub/irs-prior/i1040gi--2019.pdf
   - https://www.irs.gov/pub/irs-prior/i1040gi--2020.pdf
-  - TODO: 2021
+  - https://www.irs.gov/pub/irs-prior/i1040gi--2021.pdf
   - https://www.irs.gov/pub/irs-pdf/i1040gi.pdf
 """
 
@@ -32,7 +32,6 @@ WITHHOLDING_ALLOWANCE = {
     2019: 4200,
     2020: 4300,
     2021: 4300,
-    # TODO: 2022
     2022: 4300,
 }
 
@@ -169,27 +168,26 @@ INCOME_TAX_WITHHOLDING = util.copy_single_to_married_separately({
             640500: 0.37,
         }),
     },
-    # TODO: 2022
     2022: {
         model.FilingStatus.SINGLE: model.BracketGroup.from_dict({
             0: 0.00,
-            3950: 0.10,
-            13900: 0.12,
-            44475: 0.22,
-            90325: 0.24,
-            168875: 0.32,
-            213375: 0.35,
-            527550: 0.37,
+            4350: 0.10,
+            14625: 0.12,
+            46125: 0.22,
+            93425: 0.24,
+            174400: 0.32,
+            220300: 0.35,
+            544250: 0.37,
         }),
         model.FilingStatus.MARRIED_JOINTLY: model.BracketGroup.from_dict({
             0: 0.00,
-            12200: 0.10,
-            32100: 0.12,
-            93250: 0.22,
-            184950: 0.24,
-            342050: 0.32,
-            431050: 0.35,
-            640500: 0.37,
+            13000: 0.10,
+            33550: 0.12,
+            96550: 0.22,
+            191150: 0.24,
+            353100: 0.32,
+            444900: 0.35,
+            660850: 0.37,
         }),
     },
 })

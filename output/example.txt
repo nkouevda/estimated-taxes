@@ -9,19 +9,19 @@ AGI: 168500.00
 # Federal
 
 taxable wages: 159900.00
-estimated withholding: 30199.00 (18.89%)
+estimated withholding: 29917.50 (18.71%)
 
 taxable income: 155550.00
 total tax: 31167.50 (20.04%)
-paid tax: 30199.00 (19.41%)
-error: -968.50
+paid tax: 29917.50 (19.23%)
+error: -1250.00
 
 # CA
 
 taxable wages: 163697.00
-estimated withholding: 13175.92 (8.05%)
+estimated withholding: 13164.92 (8.04%)
 
 taxable income: 163697.00
 total tax: 12226.11 (7.47%)
-paid tax: 13175.92 (8.05%)
-error: 949.81
+paid tax: 13164.92 (8.04%)
+error: 938.81
