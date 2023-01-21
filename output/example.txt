@@ -1,6 +1,6 @@
 # General
 
-year: 2022
+year: 2023
 filing status: single
 
 W-2 wages: 168500.00
@@ -9,19 +9,19 @@ AGI: 168500.00
 # Federal
 
 taxable wages: 159900.00
-estimated withholding: 29917.50 (18.71%)
+estimated withholding: 29330.50 (18.34%)
 
-taxable income: 155550.00
-total tax: 31167.50 (20.04%)
-paid tax: 29917.50 (19.23%)
-error: -1250.00
+taxable income: 154650.00
+total tax: 30516.00 (19.73%)
+paid tax: 29330.50 (18.97%)
+error: -1185.50
 
 # CA
 
-taxable wages: 163697.00
-estimated withholding: 13164.92 (8.04%)
+taxable wages: 163298.00
+estimated withholding: 12826.21 (7.85%)
 
-taxable income: 163697.00
-total tax: 12226.11 (7.47%)
-paid tax: 13164.92 (8.04%)
-error: 938.81
+taxable income: 163298.00
+total tax: 11940.19 (7.31%)
+paid tax: 12826.21 (7.85%)
+error: 886.02
