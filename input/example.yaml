@@ -38,8 +38,13 @@ dividends_foreign_tax: 0
 long_term_capital_gains: 0
 short_term_capital_gains: 0
 
-state_tax_refund: 0
 other_income: 0
+
+state_tax_refund: 0
+last_year_itemized_deductions: false
+
+# For itemized deductions: other state taxes paid, e.g. amount due for previous year
+ca_other_payments: 0
 
 fed_estimated_tax:
   q1: 0
@@ -51,6 +56,3 @@ ca_estimated_tax:
   q2: 0
   q3: 0
   q4: 0
-
-# For itemized deductions, other state taxes paid, e.g. amount due for previous year
-ca_other_payments: 0

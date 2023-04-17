@@ -37,9 +37,9 @@ def get_ca_withholding(data):
 def get_fed_tax(data, fed_withheld_tax, ca_withheld_tax):
   state_and_local_taxes = ca_withheld_tax + data.ca_estimated_tax + data.ca_other_payments
   state_and_local_taxes_limit = constants.fed.STATE_TAX_DEDUCTION_LIMIT[data.year]
-  itemized_deduction = min(state_and_local_taxes, state_and_local_taxes_limit)
+  itemized_deductions = min(state_and_local_taxes, state_and_local_taxes_limit)
   standard_deduction = constants.fed.STANDARD_DEDUCTION[data.year][data.filing_status]
-  deduction = max(itemized_deduction, standard_deduction)
+  deduction = max(itemized_deductions, standard_deduction)
   exemption = constants.fed.PERSONAL_EXEMPTION[data.year]
   taxable_income = data.agi - deduction - exemption
 
@@ -75,8 +75,8 @@ def get_fed_tax(data, fed_withheld_tax, ca_withheld_tax):
 # See https://www.ftb.ca.gov/forms/2022/2022-540-booklet.pdf
 def get_ca_tax(data, ca_withheld_tax):
   deduction = constants.ca.STANDARD_DEDUCTION[data.year][data.filing_status]
-  adjustments = -data.state_tax_refund if data.year <= 2018 else 0
-  taxable_income = data.agi + adjustments - deduction
+  adjustments = data.state_tax_refund if data.last_year_itemized_deductions else 0
+  taxable_income = data.agi - adjustments - deduction
 
   total_tax = constants.ca.INCOME_TAX[data.year][data.filing_status].get_tax(taxable_income)
 

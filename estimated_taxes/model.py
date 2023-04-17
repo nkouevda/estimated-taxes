@@ -81,11 +81,12 @@ class InputData(object):
   dividends_foreign_tax: float = 0
   long_term_capital_gains: float = 0
   short_term_capital_gains: float = 0
-  state_tax_refund: float = 0
   other_income: float = 0
+  state_tax_refund: float = 0
+  last_year_itemized_deductions: bool = False
+  ca_other_payments: float = 0
   fed_estimated_tax: float = 0
   ca_estimated_tax: float = 0
-  ca_other_payments: float = 0
 
   def __post_init__(self):
     if not (MIN_YEAR <= self.year <= MAX_YEAR):
@@ -116,7 +117,7 @@ class InputData(object):
   @property
   def agi(self):
     return self.w2_wages + self.investment_income + self.other_income + (
-        self.state_tax_refund if self.year <= 2018 else 0)
+        self.state_tax_refund if self.last_year_itemized_deductions else 0)
 
 
 @dataclass(frozen=True)
