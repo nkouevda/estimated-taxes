@@ -17,9 +17,9 @@ These numbers are from the following documents:
   - https://www.ftb.ca.gov/forms/2017/17-540-booklet.html
   - (2018 is only available by request)
   - https://www.ftb.ca.gov/forms/2019/2019-540-booklet.html
-  - https://www.ftb.ca.gov/forms/2020/2020-540-booklet.pdf
-  - (2021 is only available by request)
-  - https://www.ftb.ca.gov/forms/2022/2022-540-booklet.pdf
+  - https://www.ftb.ca.gov/forms/2020/2020-540-booklet.html
+  - https://www.ftb.ca.gov/forms/2021/2021-540-booklet.html
+  - https://www.ftb.ca.gov/forms/2022/2022-540-booklet.html
 """
 
 from . import util
@@ -291,10 +291,9 @@ STANDARD_DEDUCTION = util.copy_single_to_married_separately({
         model.FilingStatus.SINGLE: 5202,
         model.FilingStatus.MARRIED_JOINTLY: 10404,
     },
-    # TODO
     2023: {
-        model.FilingStatus.SINGLE: 5202,
-        model.FilingStatus.MARRIED_JOINTLY: 10404,
+        model.FilingStatus.SINGLE: 5363,
+        model.FilingStatus.MARRIED_JOINTLY: 10726,
     },
 })
 
@@ -467,29 +466,28 @@ INCOME_TAX = util.copy_single_to_married_separately({
             1354550: 0.123,
         }),
     },
-    # TODO
     2023: {
         model.FilingStatus.SINGLE: model.BracketGroup.from_dict({
             0: 0.01,
-            10099: 0.02,
-            23942: 0.04,
-            37788: 0.06,
-            52455: 0.08,
-            66295: 0.093,
-            338639: 0.103,
-            406364: 0.113,
-            677275: 0.123,
+            10412: 0.02,
+            24684: 0.04,
+            38959: 0.06,
+            54081: 0.08,
+            68350: 0.093,
+            349137: 0.103,
+            418961: 0.113,
+            698271: 0.123,
         }),
         model.FilingStatus.MARRIED_JOINTLY: model.BracketGroup.from_dict({
             0: 0.01,
-            20198: 0.02,
-            47884: 0.04,
-            75576: 0.06,
-            104910: 0.08,
-            132590: 0.093,
-            677278: 0.103,
-            812728: 0.113,
-            1354550: 0.123,
+            20824: 0.02,
+            49368: 0.04,
+            77918: 0.06,
+            108162: 0.08,
+            136700: 0.093,
+            698274: 0.103,
+            837922: 0.113,
+            1369542: 0.123,
         }),
     },
 })
