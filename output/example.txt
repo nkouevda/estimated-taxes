@@ -3,25 +3,25 @@
 year: 2024
 filing status: single
 
-W-2 wages: 168500.00
-AGI: 168500.00
+W-2 wages: 164500.00
+AGI: 164500.00
 
 # Federal
 
-taxable wages: 159900.00
-estimated withholding: 28911.00 (18.08%)
+taxable wages: 155900.00
+estimated withholding: 28031.00 (17.98%)
 
-taxable income: 153900.00
-total tax: 29978.50 (19.48%)
-paid tax: 28911.00 (18.79%)
-error: -1067.50
+taxable income: 149900.00
+total tax: 29018.50 (19.36%)
+paid tax: 28031.00 (18.70%)
+error: -987.50
 
 # CA
 
-taxable wages: 163137.00
-estimated withholding: 12690.25 (7.78%)
+taxable wages: 159137.00
+estimated withholding: 12281.05 (7.72%)
 
-taxable income: 163137.00
-total tax: 11824.59 (7.25%)
-paid tax: 12690.25 (7.78%)
-error: 865.66
+taxable income: 159137.00
+total tax: 11452.59 (7.20%)
+paid tax: 12281.05 (7.72%)
+error: 828.46
