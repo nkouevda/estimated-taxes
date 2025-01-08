@@ -4,7 +4,7 @@ from typing import List
 
 # `constants.*` depends on `model`, so we can't import from `constants` here
 MIN_YEAR = 2016
-MAX_YEAR = 2024
+MAX_YEAR = 2025
 
 
 class FilingStatus(Enum):

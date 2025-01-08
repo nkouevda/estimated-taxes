@@ -17,7 +17,7 @@ def get_fed_withholding(data):
   return model.WithholdingSummary(taxable_wages, tax)
 
 
-# See https://edd.ca.gov/siteassets/files/pdf_pub_ctr/24methb.pdf
+# See https://edd.ca.gov/siteassets/files/pdf_pub_ctr/25methb.pdf
 def get_ca_withholding(data):
   # The previous year's standard deduction
   deduction = constants.ca.STANDARD_DEDUCTION[data.year - 1][data.filing_status]
@@ -72,7 +72,7 @@ def get_fed_tax(data, fed_withheld_tax, ca_withheld_tax):
   return model.TaxSummary(taxable_income, total_tax, paid_tax)
 
 
-# See https://www.ftb.ca.gov/forms/2023/2023-540-booklet.html
+# See https://www.ftb.ca.gov/forms/2024/2024-540-booklet.html
 def get_ca_tax(data, ca_withheld_tax):
   deduction = constants.ca.STANDARD_DEDUCTION[data.year][data.filing_status]
   adjustments = data.state_tax_refund if data.last_year_itemized_deductions else 0
