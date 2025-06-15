@@ -27,7 +27,7 @@ usage: estimated-taxes [<options>] [--] <input file>
 
 Estimated taxes calculator
 
-optional arguments:
+options:
   -h, --help     show this help message and exit
   -v, --version  show program's version number and exit
 ```

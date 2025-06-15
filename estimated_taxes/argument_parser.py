@@ -5,8 +5,10 @@ from . import __version__
 
 def get_parser():
     parser = argparse.ArgumentParser(
+        prog="estimated-taxes",
         usage="%(prog)s [<options>] [--] <input file>",
         description="Estimated taxes calculator",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
 
     parser.add_argument(
