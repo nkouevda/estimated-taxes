@@ -1,5 +1,5 @@
 def format(data, fed_withholding, ca_withholding, fed_tax, ca_tax):
-  return f"""
+    return f"""
 # General
 
 year: {data.year}

@@ -12,7 +12,8 @@ from .. import model
 #       ...
 #   }
 def copy_single_to_married_separately(year_to_filing_status_to_values):
-  for filing_status_to_values in year_to_filing_status_to_values.values():
-    filing_status_to_values[model.FilingStatus.MARRIED_SEPARATELY] = \
-      filing_status_to_values[model.FilingStatus.SINGLE]
-  return year_to_filing_status_to_values
+    for filing_status_to_values in year_to_filing_status_to_values.values():
+        filing_status_to_values[model.FilingStatus.MARRIED_SEPARATELY] = filing_status_to_values[
+            model.FilingStatus.SINGLE
+        ]
+    return year_to_filing_status_to_values
