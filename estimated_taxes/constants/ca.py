@@ -26,8 +26,8 @@ These numbers are from the following documents:
   - https://www.ftb.ca.gov/forms/2024/2024-540-booklet.html
 """
 
-from . import util
 from .. import model
+from . import util
 
 WITHHOLDING_ALLOWANCE = {
     2016: 119.90,

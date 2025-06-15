@@ -1,5 +1,6 @@
 from .. import model
 
+
 # Given a nested structure like the example below, for each year, add a
 # MARRIED_SEPARATELY entry with the value copied from the SINGLE entry:
 #

@@ -28,8 +28,8 @@ These numbers are from the following documents:
   - https://www.irs.gov/pub/irs-pdf/i1040gi.pdf
 """
 
-from . import util
 from .. import model
+from . import util
 
 WITHHOLDING_ALLOWANCE = {
     2016: 4050,
