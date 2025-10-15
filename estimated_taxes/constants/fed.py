@@ -332,7 +332,7 @@ STATE_TAX_DEDUCTION_LIMIT = {
     2022: 10000,
     2023: 10000,
     2024: 10000,
-    2025: 10000,
+    2025: 40000,
 }
 
 STANDARD_DEDUCTION = util.copy_single_to_married_separately(
