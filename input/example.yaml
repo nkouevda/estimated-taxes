@@ -5,7 +5,7 @@
 # - Make sure the basics are correct: year, filing status, and federal and Calif. allowances
 # - For regular_wages and k401, enter the total expected for the whole year; the assumption is that
 #   your employer appropriately withholds taxes for regular wages
-# - For everything else (supplemental_wages, untaxed_wages, interest, dividends, etc.), assuming you
+# - For everything else (supplemental_wages, not_withheld_wages, interest, dividends, etc.), if you
 #   want to pay estimated taxes "as you go" and not all at once, enter the amount earned YTD
 
 year: 2025
@@ -14,14 +14,14 @@ filing_status: 1
 fed_allowances: 2
 ca_allowances: 2
 
-# Taxed at the regular rate, e.g. salary
+# Withheld at the regular rate, e.g. salary
 regular_wages: 125000
-# Taxed at the flat supplemental rate, e.g. bonus
+# Withheld at the flat supplemental rate, e.g. bonus
 supplemental_wages:
   bonus: 12500
   rsu: 50000
-# Not taxed, e.g. ESPP and ISO bargain elements
-untaxed_wages:
+# Not withheld, e.g. ESPP and ISO bargain elements
+not_withheld_wages:
   espp: 0
   iso: 0
 

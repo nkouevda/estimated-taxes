@@ -72,7 +72,7 @@ class InputData(object):
     ca_allowances: int
     regular_wages: float = 0
     supplemental_wages: float = 0
-    untaxed_wages: float = 0
+    not_withheld_wages: float = 0
     k401: float = 0
     other_adjustments: float = 0
     interest: float = 0
@@ -104,7 +104,7 @@ class InputData(object):
 
     @property
     def w2_wages(self):
-        return self.regular_wages + self.supplemental_wages + self.untaxed_wages + self.adjustments
+        return self.regular_wages + self.supplemental_wages + self.not_withheld_wages + self.adjustments
 
     @property
     def medicare_wages(self):
