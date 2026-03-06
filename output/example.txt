@@ -11,10 +11,10 @@ AGI: 164000.00
 taxable wages: 155400.00
 estimated withholding: 27694.00 (17.82%)
 
-taxable income: 149000.00
-total tax: 28607.00 (19.20%)
-paid tax: 27694.00 (18.59%)
-error: -913.00
+taxable income: 148250.00
+total tax: 28427.00 (19.18%)
+paid tax: 27694.00 (18.68%)
+error: -733.00
 
 # CA
 

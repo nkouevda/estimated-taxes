@@ -374,8 +374,8 @@ STANDARD_DEDUCTION = util.copy_single_to_married_separately(
             model.FilingStatus.MARRIED_JOINTLY: 29200,
         },
         2025: {
-            model.FilingStatus.SINGLE: 15000,
-            model.FilingStatus.MARRIED_JOINTLY: 30000,
+            model.FilingStatus.SINGLE: 15750,
+            model.FilingStatus.MARRIED_JOINTLY: 31500,
         },
     }
 )
