@@ -8,7 +8,7 @@
 # - For everything else (supplemental_wages, not_withheld_wages, interest, dividends, etc.), if you
 #   want to pay estimated taxes "as you go" and not all at once, enter the amount earned YTD
 
-year: 2025
+year: 2026
 # Filing status: 1 = single, 2 = married filing jointly, 3 = married filing separately
 filing_status: 1
 fed_allowances: 2
@@ -26,7 +26,7 @@ not_withheld_wages:
   iso: 0
 
 # Traditional 401(k) (as a positive value) and any other adjustments (negative means deduct)
-k401: 23500
+k401: 24500
 other_adjustments: 0
 
 interest: 0

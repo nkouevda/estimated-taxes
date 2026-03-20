@@ -13,6 +13,7 @@ These numbers are from the following documents:
   - https://www.irs.gov/pub/irs-prior/p15t--2023.pdf
   - https://www.irs.gov/pub/irs-prior/p15t--2024.pdf
   - https://www.irs.gov/pub/irs-prior/p15t--2025.pdf
+  - https://www.irs.gov/pub/irs-prior/p15t--2026.pdf
   - https://www.irs.gov/pub/irs-pdf/p15t.pdf
 
 - Income tax
@@ -25,6 +26,7 @@ These numbers are from the following documents:
   - https://www.irs.gov/pub/irs-prior/i1040gi--2022.pdf
   - https://www.irs.gov/pub/irs-prior/i1040gi--2023.pdf
   - https://www.irs.gov/pub/irs-prior/i1040gi--2024.pdf
+  - https://www.irs.gov/pub/irs-prior/i1040gi--2025.pdf
   - https://www.irs.gov/pub/irs-pdf/i1040gi.pdf
 """
 
@@ -42,6 +44,7 @@ WITHHOLDING_ALLOWANCE = {
     2023: 4300,
     2024: 4300,
     2025: 4300,
+    2026: 4300,
 }
 
 INCOME_TAX_WITHHOLDING = util.copy_single_to_married_separately(
@@ -306,6 +309,32 @@ INCOME_TAX_WITHHOLDING = util.copy_single_to_married_separately(
                 }
             ),
         },
+        2026: {
+            model.FilingStatus.SINGLE: model.BracketGroup.from_dict(
+                {
+                    0: 0.00,
+                    7500: 0.10,
+                    19900: 0.12,
+                    57900: 0.22,
+                    113200: 0.24,
+                    209275: 0.32,
+                    263725: 0.35,
+                    648100: 0.37,
+                }
+            ),
+            model.FilingStatus.MARRIED_JOINTLY: model.BracketGroup.from_dict(
+                {
+                    0: 0.00,
+                    19300: 0.10,
+                    44100: 0.12,
+                    120100: 0.22,
+                    230700: 0.24,
+                    422850: 0.32,
+                    531750: 0.35,
+                    788000: 0.37,
+                }
+            ),
+        },
     }
 )
 
@@ -320,6 +349,7 @@ WITHHOLDING_SUPPLEMENTAL_RATE = {
     2023: model.BracketGroup.from_dict({0: 0.22, 1000000: 0.37}),
     2024: model.BracketGroup.from_dict({0: 0.22, 1000000: 0.37}),
     2025: model.BracketGroup.from_dict({0: 0.22, 1000000: 0.37}),
+    2026: model.BracketGroup.from_dict({0: 0.22, 1000000: 0.37}),
 }
 
 STATE_TAX_DEDUCTION_LIMIT = {
@@ -333,6 +363,7 @@ STATE_TAX_DEDUCTION_LIMIT = {
     2023: 10000,
     2024: 10000,
     2025: 40000,
+    2026: 40000,
 }
 
 STANDARD_DEDUCTION = util.copy_single_to_married_separately(
@@ -377,6 +408,10 @@ STANDARD_DEDUCTION = util.copy_single_to_married_separately(
             model.FilingStatus.SINGLE: 15750,
             model.FilingStatus.MARRIED_JOINTLY: 31500,
         },
+        2026: {
+            model.FilingStatus.SINGLE: 16100,
+            model.FilingStatus.MARRIED_JOINTLY: 32200,
+        },
     }
 )
 
@@ -391,6 +426,7 @@ PERSONAL_EXEMPTION = {
     2023: 0,
     2024: 0,
     2025: 0,
+    2026: 0,
 }
 
 FOREIGN_TAX_CREDIT_LIMIT = 300
@@ -746,6 +782,41 @@ INCOME_TAX = {
             }
         ),
     },
+    2026: {
+        model.FilingStatus.SINGLE: model.BracketGroup.from_dict(
+            {
+                0: 0.10,
+                12400: 0.12,
+                50400: 0.22,
+                105700: 0.24,
+                201775: 0.32,
+                256225: 0.35,
+                640600: 0.37,
+            }
+        ),
+        model.FilingStatus.MARRIED_JOINTLY: model.BracketGroup.from_dict(
+            {
+                0: 0.10,
+                24800: 0.12,
+                100800: 0.22,
+                211400: 0.24,
+                403550: 0.32,
+                512450: 0.35,
+                768700: 0.37,
+            }
+        ),
+        model.FilingStatus.MARRIED_SEPARATELY: model.BracketGroup.from_dict(
+            {
+                0: 0.10,
+                12400: 0.12,
+                50400: 0.22,
+                105700: 0.24,
+                201775: 0.32,
+                256225: 0.35,
+                384350: 0.37,
+            }
+        ),
+    },
 }
 
 LONG_TERM_CAPITAL_GAINS_TAX = {
@@ -976,6 +1047,29 @@ LONG_TERM_CAPITAL_GAINS_TAX = {
                 0: 0.0,
                 48350: 0.15,
                 300000: 0.20,
+            }
+        ),
+    },
+    2026: {
+        model.FilingStatus.SINGLE: model.BracketGroup.from_dict(
+            {
+                0: 0.0,
+                49450: 0.15,
+                545500: 0.20,
+            }
+        ),
+        model.FilingStatus.MARRIED_JOINTLY: model.BracketGroup.from_dict(
+            {
+                0: 0.0,
+                98900: 0.15,
+                613700: 0.20,
+            }
+        ),
+        model.FilingStatus.MARRIED_SEPARATELY: model.BracketGroup.from_dict(
+            {
+                0: 0.0,
+                49450: 0.15,
+                306850: 0.20,
             }
         ),
     },

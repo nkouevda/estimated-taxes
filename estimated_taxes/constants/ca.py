@@ -13,6 +13,7 @@ These numbers are from the following documents:
   - https://edd.ca.gov/siteassets/files/pdf_pub_ctr/23methb.pdf
   - https://edd.ca.gov/siteassets/files/pdf_pub_ctr/24methb.pdf
   - https://edd.ca.gov/siteassets/files/pdf_pub_ctr/25methb.pdf
+  - https://edd.ca.gov/siteassets/files/pdf_pub_ctr/26methb.pdf
 
 - Income tax
   - (2016 is only available by request)
@@ -24,6 +25,7 @@ These numbers are from the following documents:
   - https://www.ftb.ca.gov/forms/2022/2022-540-booklet.html
   - https://www.ftb.ca.gov/forms/2023/2023-540-booklet.html
   - https://www.ftb.ca.gov/forms/2024/2024-540-booklet.html
+  - https://www.ftb.ca.gov/forms/2025/2025-540-booklet.html
 """
 
 from .. import model
@@ -40,6 +42,7 @@ WITHHOLDING_ALLOWANCE = {
     2023: 154.00,
     2024: 158.40,
     2025: 163.90,
+    2026: 168.30,
 }
 
 INCOME_TAX_WITHHOLDING = util.copy_single_to_married_separately(
@@ -344,6 +347,36 @@ INCOME_TAX_WITHHOLDING = util.copy_single_to_married_separately(
                 }
             ),
         },
+        2026: {
+            model.FilingStatus.SINGLE: model.BracketGroup.from_dict(
+                {
+                    0: 0.011,
+                    11079: 0.022,
+                    26264: 0.044,
+                    41452: 0.066,
+                    57542: 0.088,
+                    72724: 0.1023,
+                    371479: 0.1133,
+                    445771: 0.1243,
+                    742953: 0.1353,
+                    1000000: 0.1463,
+                }
+            ),
+            model.FilingStatus.MARRIED_JOINTLY: model.BracketGroup.from_dict(
+                {
+                    0: 0.01,
+                    22158: 0.022,
+                    52528: 0.044,
+                    82904: 0.066,
+                    115084: 0.088,
+                    145448: 0.1023,
+                    742958: 0.1133,
+                    891542: 0.1243,
+                    1000000: 0.1353,
+                    1485906: 0.1463,
+                }
+            ),
+        },
     }
 )
 
@@ -358,6 +391,7 @@ WITHHOLDING_SUPPLEMENTAL_RATE = {
     2023: 0.1023,
     2024: 0.1023,
     2025: 0.1023,
+    2026: 0.1023,
 }
 
 STANDARD_DEDUCTION = util.copy_single_to_married_separately(
@@ -402,10 +436,14 @@ STANDARD_DEDUCTION = util.copy_single_to_married_separately(
             model.FilingStatus.SINGLE: 5540,
             model.FilingStatus.MARRIED_JOINTLY: 11080,
         },
-        # TODO: copied from 2024
         2025: {
-            model.FilingStatus.SINGLE: 5540,
-            model.FilingStatus.MARRIED_JOINTLY: 11080,
+            model.FilingStatus.SINGLE: 5706,
+            model.FilingStatus.MARRIED_JOINTLY: 11412,
+        },
+        # TODO: copied from 2025
+        2026: {
+            model.FilingStatus.SINGLE: 5706,
+            model.FilingStatus.MARRIED_JOINTLY: 11412,
         },
     }
 )
@@ -664,32 +702,60 @@ INCOME_TAX = util.copy_single_to_married_separately(
                 }
             ),
         },
-        # TODO: copied from 2024
         2025: {
             model.FilingStatus.SINGLE: model.BracketGroup.from_dict(
                 {
                     0: 0.01,
-                    10756: 0.02,
-                    25499: 0.04,
-                    40245: 0.06,
-                    55866: 0.08,
-                    70606: 0.093,
-                    360659: 0.103,
-                    432787: 0.113,
-                    721314: 0.123,
+                    11079: 0.02,
+                    26264: 0.04,
+                    41452: 0.06,
+                    57542: 0.08,
+                    72724: 0.093,
+                    371479: 0.103,
+                    445771: 0.113,
+                    742953: 0.123,
                 }
             ),
             model.FilingStatus.MARRIED_JOINTLY: model.BracketGroup.from_dict(
                 {
                     0: 0.01,
-                    21512: 0.02,
-                    50998: 0.04,
-                    80490: 0.06,
-                    111732: 0.08,
-                    141212: 0.093,
-                    721318: 0.103,
-                    865574: 0.113,
-                    1442628: 0.123,
+                    22158: 0.02,
+                    52528: 0.04,
+                    82904: 0.06,
+                    115084: 0.08,
+                    145448: 0.093,
+                    742958: 0.103,
+                    891542: 0.113,
+                    1485906: 0.123,
+                }
+            ),
+        },
+        # TODO: copied from 2025
+        2026: {
+            model.FilingStatus.SINGLE: model.BracketGroup.from_dict(
+                {
+                    0: 0.01,
+                    11079: 0.02,
+                    26264: 0.04,
+                    41452: 0.06,
+                    57542: 0.08,
+                    72724: 0.093,
+                    371479: 0.103,
+                    445771: 0.113,
+                    742953: 0.123,
+                }
+            ),
+            model.FilingStatus.MARRIED_JOINTLY: model.BracketGroup.from_dict(
+                {
+                    0: 0.01,
+                    22158: 0.02,
+                    52528: 0.04,
+                    82904: 0.06,
+                    115084: 0.08,
+                    145448: 0.093,
+                    742958: 0.103,
+                    891542: 0.113,
+                    1485906: 0.123,
                 }
             ),
         },
