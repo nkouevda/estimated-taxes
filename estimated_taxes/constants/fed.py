@@ -310,16 +310,16 @@ INCOME_TAX_WITHHOLDING = util.copy_single_to_married_separately(
 )
 
 WITHHOLDING_SUPPLEMENTAL_RATE = {
-    2016: 0.25,
-    2017: 0.25,
-    2018: 0.22,
-    2019: 0.22,
-    2020: 0.22,
-    2021: 0.22,
-    2022: 0.22,
-    2023: 0.22,
-    2024: 0.22,
-    2025: 0.22,
+    2016: model.BracketGroup.from_dict({0: 0.25, 1000000: 0.396}),
+    2017: model.BracketGroup.from_dict({0: 0.25, 1000000: 0.396}),
+    2018: model.BracketGroup.from_dict({0: 0.22, 1000000: 0.37}),
+    2019: model.BracketGroup.from_dict({0: 0.22, 1000000: 0.37}),
+    2020: model.BracketGroup.from_dict({0: 0.22, 1000000: 0.37}),
+    2021: model.BracketGroup.from_dict({0: 0.22, 1000000: 0.37}),
+    2022: model.BracketGroup.from_dict({0: 0.22, 1000000: 0.37}),
+    2023: model.BracketGroup.from_dict({0: 0.22, 1000000: 0.37}),
+    2024: model.BracketGroup.from_dict({0: 0.22, 1000000: 0.37}),
+    2025: model.BracketGroup.from_dict({0: 0.22, 1000000: 0.37}),
 }
 
 STATE_TAX_DEDUCTION_LIMIT = {

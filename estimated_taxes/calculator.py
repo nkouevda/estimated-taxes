@@ -11,8 +11,8 @@ def get_fed_withholding(data):
     regular_tax = constants.fed.INCOME_TAX_WITHHOLDING[data.year][data.filing_status].get_tax(
         regular_taxable_wages
     )
-    supplemental_tax = (
-        data.supplemental_wages * constants.fed.WITHHOLDING_SUPPLEMENTAL_RATE[data.year]
+    supplemental_tax = constants.fed.WITHHOLDING_SUPPLEMENTAL_RATE[data.year].get_tax(
+        data.supplemental_wages
     )
     tax = regular_tax + supplemental_tax
 
