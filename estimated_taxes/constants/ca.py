@@ -5,8 +5,8 @@ These numbers are from the following documents:
 - Income tax withholding
   - (2016 is unavailable)
   - (2017 is unavailable)
-  - https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44-18.pdf
-  - https://edd.ca.gov/siteassets/files/pdf_pub_ctr/de44-19.pdf
+  - https://edd.ca.gov/siteassets/files/pdf_pub_ctr/18methb.pdf
+  - https://edd.ca.gov/siteassets/files/pdf_pub_ctr/19methb.pdf
   - https://edd.ca.gov/siteassets/files/pdf_pub_ctr/20methb.pdf
   - https://edd.ca.gov/siteassets/files/pdf_pub_ctr/21methb.pdf
   - https://edd.ca.gov/siteassets/files/pdf_pub_ctr/22methb.pdf
@@ -26,6 +26,7 @@ These numbers are from the following documents:
   - https://www.ftb.ca.gov/forms/2023/2023-540-booklet.html
   - https://www.ftb.ca.gov/forms/2024/2024-540-booklet.html
   - https://www.ftb.ca.gov/forms/2025/2025-540-booklet.html
+  - TODO: 2026
 """
 
 from .. import model
@@ -440,10 +441,9 @@ STANDARD_DEDUCTION = util.copy_single_to_married_separately(
             model.FilingStatus.SINGLE: 5706,
             model.FilingStatus.MARRIED_JOINTLY: 11412,
         },
-        # TODO: copied from 2025
         2026: {
-            model.FilingStatus.SINGLE: 5706,
-            model.FilingStatus.MARRIED_JOINTLY: 11412,
+            model.FilingStatus.SINGLE: 5900,
+            model.FilingStatus.MARRIED_JOINTLY: 11800,
         },
     }
 )
@@ -730,32 +730,31 @@ INCOME_TAX = util.copy_single_to_married_separately(
                 }
             ),
         },
-        # TODO: copied from 2025
         2026: {
             model.FilingStatus.SINGLE: model.BracketGroup.from_dict(
                 {
                     0: 0.01,
-                    11079: 0.02,
-                    26264: 0.04,
-                    41452: 0.06,
-                    57542: 0.08,
-                    72724: 0.093,
-                    371479: 0.103,
-                    445771: 0.113,
-                    742953: 0.123,
+                    11456: 0.02,
+                    27157: 0.04,
+                    42861: 0.06,
+                    59498: 0.08,
+                    75197: 0.093,
+                    384109: 0.103,
+                    460927: 0.113,
+                    768213: 0.123,
                 }
             ),
             model.FilingStatus.MARRIED_JOINTLY: model.BracketGroup.from_dict(
                 {
                     0: 0.01,
-                    22158: 0.02,
-                    52528: 0.04,
-                    82904: 0.06,
-                    115084: 0.08,
-                    145448: 0.093,
-                    742958: 0.103,
-                    891542: 0.113,
-                    1485906: 0.123,
+                    22912: 0.02,
+                    54314: 0.04,
+                    85722: 0.06,
+                    118996: 0.08,
+                    150394: 0.093,
+                    768218: 0.103,
+                    921854: 0.113,
+                    1536426: 0.123,
                 }
             ),
         },
