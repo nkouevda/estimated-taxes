@@ -1,4 +1,9 @@
 def format(data, fed_withholding, ca_withholding, fed_tax, ca_tax):
+    total_tax = fed_tax.total_tax + ca_tax.total_tax
+    paid_tax = fed_tax.paid_tax + ca_tax.paid_tax
+    total_tax_rate = total_tax / fed_tax.taxable_income
+    paid_tax_rate = paid_tax / fed_tax.taxable_income
+
     return f"""
 # General
 
@@ -27,4 +32,9 @@ taxable income: {ca_tax.taxable_income:.2f}
 total tax: {ca_tax.total_tax:.2f} ({100 * ca_tax.total_tax_rate:.2f}%)
 paid tax: {ca_tax.paid_tax:.2f} ({100 * ca_tax.paid_tax_rate:.2f}%)
 error: {ca_tax.tax_error:.2f}
+
+# Total
+
+total tax: {total_tax:.2f} ({100 * total_tax_rate:.2f}%)
+paid tax: {paid_tax:.2f} ({100 * paid_tax_rate:.2f}%)
 """.strip()

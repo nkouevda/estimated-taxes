@@ -25,3 +25,8 @@ taxable income: 157100.00
 total tax: 10927.86 (6.96%)
 paid tax: 11837.08 (7.53%)
 error: 909.22
+
+# Total
+
+total tax: 38781.86 (26.40%)
+paid tax: 38867.08 (26.46%)
