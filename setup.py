@@ -3,7 +3,7 @@ import setuptools
 version = {}
 
 with open("estimated_taxes/__version__.py", "r") as f:
-    exec(f.read(), version)
+    exec(f.read(), version)  # noqa: S102
 
 with open("README.md", "r") as f:
     readme = f.read()

@@ -1,6 +1,5 @@
 from dataclasses import dataclass
 from enum import Enum
-from typing import List
 
 # `constants.*` depends on `model`, so we can't import from `constants` here
 MIN_YEAR = 2016
@@ -14,7 +13,7 @@ class FilingStatus(Enum):
 
 
 @dataclass(frozen=True)
-class Bracket(object):
+class Bracket:
     lower_bound: float
     upper_bound: float
     rate: float
@@ -25,8 +24,8 @@ class Bracket(object):
 
 
 @dataclass(frozen=True)
-class BracketGroup(object):
-    brackets: List[Bracket]
+class BracketGroup:
+    brackets: list[Bracket]
 
     def get_tax(self, taxable_amount):
         for bracket in self.brackets:
@@ -51,7 +50,7 @@ class BracketGroup(object):
 
 
 @dataclass(frozen=True)
-class AdditionalTax(object):
+class AdditionalTax:
     lower_bound: float
     rate: float
 
@@ -65,7 +64,7 @@ class AdditionalTax(object):
 
 
 @dataclass(frozen=True)
-class InputData(object):
+class InputData:
     year: int
     filing_status: FilingStatus
     fed_allowances: int
@@ -104,7 +103,12 @@ class InputData(object):
 
     @property
     def w2_wages(self):
-        return self.regular_wages + self.supplemental_wages + self.not_withheld_wages + self.adjustments
+        return (
+            self.regular_wages
+            + self.supplemental_wages
+            + self.not_withheld_wages
+            + self.adjustments
+        )
 
     @property
     def medicare_wages(self):
@@ -125,7 +129,7 @@ class InputData(object):
 
 
 @dataclass(frozen=True)
-class WithholdingSummary(object):
+class WithholdingSummary:
     taxable_wages: float
     tax: float
 
@@ -135,7 +139,7 @@ class WithholdingSummary(object):
 
 
 @dataclass(frozen=True)
-class TaxSummary(object):
+class TaxSummary:
     taxable_income: float
     total_tax: float
     paid_tax: float

@@ -11,7 +11,7 @@ def maybe_sum(value):
     elif isinstance(value, dict):
         return sum(value.values())
     else:
-        raise ValueError(
+        raise TypeError(
             f"Value type must be one of (int, float, list, dict): value={value}, type={type(value)}"
         )
 
@@ -35,6 +35,6 @@ def load_input_data(filename):
     data = yaml.safe_load(content)
 
     if not isinstance(data, model.InputData):
-        raise ValueError(f"Unexpected type loaded (is file missing '{tag}' tag?): {type(data)}")
+        raise TypeError(f"Unexpected type loaded (is file missing '{tag}' tag?): {type(data)}")
 
     return data
