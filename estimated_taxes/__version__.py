@@ -1,2 +1,2 @@
 # `YYYY.MINOR`; see https://calver.org/
-__version__ = "2026.1"
+__version__ = "2026.2"
